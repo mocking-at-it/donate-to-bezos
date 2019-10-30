@@ -1,0 +1,12 @@
+MoneyForBezos:
+  Type: AWS::RDS::DBInstance
+  Properties:
+    DBSecurityGroups:
+    - Ref: MyDbSecurityByEC2SecurityGroup
+    - Ref: MyDbSecurityByCIDRIPGroup
+    AllocatedStorage: '5'
+    DBInstanceClass: db.m1.small
+    Engine: MySQL
+    MasterUsername: LordBezos
+    MasterUserPassword: GiffUMoney
+  DeletionPolicy: Snapshot
